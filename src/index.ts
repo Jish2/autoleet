@@ -77,6 +77,7 @@ if (!GITHUB_USERNAME || !GITHUB_PASSWORD) throw new Error("Please provide GITHUB
 
 		// delete all original input
 		await page.keyboard.press("PageDown");
+		await page.keyboard.press("PageDown");
 		await page.keyboard.down("Shift");
 		await page.keyboard.press("PageUp");
 		await page.keyboard.up("Shift");
