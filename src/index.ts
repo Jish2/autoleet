@@ -76,6 +76,7 @@ if (!GITHUB_USERNAME || !GITHUB_PASSWORD) throw new Error("Please provide GITHUB
 		await page.click('div[data-track-load="code_editor"]');
 
 		// delete all original input
+		await page.keyboard.press("PageDown");
 		await page.keyboard.down("Shift");
 		await page.keyboard.press("PageUp");
 		await page.keyboard.up("Shift");
@@ -90,6 +91,9 @@ if (!GITHUB_USERNAME || !GITHUB_PASSWORD) throw new Error("Please provide GITHUB
 
 		// submit
 		await page.click('button[data-e2e-locator="console-submit-button"]');
+
+		// wait for submisison to go through
+		await page.waitForNetworkIdle({ idleTime: 500 });
 	} else {
 		console.log("failed to get");
 	}
