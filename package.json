@@ -5,11 +5,14 @@
 	"main": "src/index.ts",
 	"scripts": {
 		"build": "tsc",
-		"start": "node dist/index.js"
+		"start": "ts-node src/index"
 	},
 	"author": "jgoon",
 	"license": "MIT",
 	"devDependencies": {
 		"typescript": "^5.5.2"
+	},
+	"dependencies": {
+		"ts-node": "^10.9.2"
 	}
 }
