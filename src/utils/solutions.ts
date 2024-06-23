@@ -2,7 +2,7 @@ import { JSDOM } from "jsdom";
 
 const LEETCODE_CA_BASE_URL = "https://leetcode.ca";
 
-export async function getSolutionURL(problemNumber: number) {
+export async function getSolutionURL(problemNumber: number | string) {
 	const regex = `Problem Solution<\/h3>\n[ ]+<a[\n ]+style="font-size:20px;color: #0066cc;margin-bottom:15px;text-decoration:underline"[\n ]+href="([A-z.\/0-9:\-]+)">`;
 	const url = `${LEETCODE_CA_BASE_URL}/all/${problemNumber}.html`;
 
@@ -18,7 +18,7 @@ export async function getSolutionURL(problemNumber: number) {
 	return solutionURL;
 }
 
-export async function getSolution(problemNumber: number) {
+export async function getSolution(problemNumber: number | string) {
 	const solutionURL = await getSolutionURL(problemNumber);
 
 	const response = await fetch(solutionURL);
