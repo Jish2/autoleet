@@ -10,9 +10,13 @@
 	"author": "jgoon",
 	"license": "MIT",
 	"devDependencies": {
+		"@types/jsdom": "^21.1.7",
 		"typescript": "^5.5.2"
 	},
 	"dependencies": {
+		"dotenv": "^16.4.5",
+		"jsdom": "^24.1.0",
+		"puppeteer": "^22.12.0",
 		"ts-node": "^10.9.2"
 	}
 }
