@@ -30,7 +30,6 @@ if (!GITHUB_USERNAME || !GITHUB_PASSWORD) throw new Error("Please provide GITHUB
 
 	await continueButton.click({ delay: 400 });
 	await page.waitForNavigation();
-	console.log("HERE 12");
 	const githubUsernameInput = await page.waitForSelector("#login_field");
 	const githubPasswordInput = await page.waitForSelector("#password");
 	if (!githubPasswordInput || !githubUsernameInput) throw new Error("Issue loading GitHub login page.");
@@ -41,12 +40,9 @@ if (!GITHUB_USERNAME || !GITHUB_PASSWORD) throw new Error("Please provide GITHUB
 	await page.click('input[type="submit"][value="Sign in"]');
 
 	await page.waitForNavigation();
-	console.log("HERE 1251");
 
 	const problemsButton = await page.locator("a ::-p-text(Problems)");
 	await problemsButton.click();
-
-	console.log("HERE 1");
 
 	await page.waitForNavigation();
 
@@ -62,8 +58,6 @@ if (!GITHUB_USERNAME || !GITHUB_PASSWORD) throw new Error("Please provide GITHUB
 
 	await page.waitForNavigation();
 
-	console.log("HERE 125221");
-
 	// const cookies = await page.cookies();
 	// console.log("COOKIES", cookies);
 
@@ -74,8 +68,6 @@ if (!GITHUB_USERNAME || !GITHUB_PASSWORD) throw new Error("Please provide GITHUB
 		const pythonButton = await page.locator("div ::-p-text(Python3)");
 		await pythonButton.click({ delay: 400 });
 	}
-
-	console.log("HERE 121");
 
 	const editorInput = await page.waitForSelector("textarea.inputarea");
 	// await page.type(, solution);
@@ -89,10 +81,8 @@ if (!GITHUB_USERNAME || !GITHUB_PASSWORD) throw new Error("Please provide GITHUB
 		await page.keyboard.up("Shift");
 		await page.keyboard.press("Backspace");
 
-		console.log("HERE 1fs1");
 		// await editorInput.type(solution);
 		await page.evaluate((s) => navigator.clipboard.writeText(s), solution);
-		console.log("HERE 1aaa");
 
 		await page.keyboard.down("Shift");
 		await page.keyboard.press("Insert");
