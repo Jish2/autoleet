@@ -1,3 +1,7 @@
+# autoleet
+
+never lose your leetcode streak again -- a cron job that automatically submits a solution to the daily leetcode problem
+
 # roadmap
 
 - [x] leetcode solution api - regex to
