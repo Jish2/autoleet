@@ -14,17 +14,17 @@ export async function getDailyProblem() {
             date
             link
             question {
-              questionId
+              questionFrontendId
             }
         }
     }`,
 			variables: {},
 		}),
 	});
-	// console.log(await response.text());
+
 	const { data } = await response.json();
 	return {
-		questionId: data.activeDailyCodingChallengeQuestion.question.questionId,
+		questionId: data.activeDailyCodingChallengeQuestion.question.questionFrontendId,
 		link: LEETCODE_URL + data.activeDailyCodingChallengeQuestion.link,
 	};
 }
