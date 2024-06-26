@@ -11,7 +11,7 @@ export async function getSolutionURL(problemNumber: number | string) {
 
 	const match = html.match(regex);
 
-	if (!match) throw new Error("Could not find solution URL");
+	if (!match) throw new Error("Could not find solution URL " + url);
 
 	const solutionURL = match[1];
 
