@@ -80,6 +80,7 @@ if (!GITHUB_USERNAME || !GITHUB_PASSWORD) throw new Error("Please provide GITHUB
 		await page.keyboard.press("PageDown");
 		await page.keyboard.down("Shift");
 		await page.keyboard.press("PageUp");
+		await page.keyboard.press("PageUp");
 		await page.keyboard.up("Shift");
 		await page.keyboard.press("Backspace");
 
